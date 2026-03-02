@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 1rem;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("src/assets/icons/rocket.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.status {
+    font-size: 16rem;
+    color: #22272b;
+    line-height: 1;
+    margin: 0;
+}
+
+.message {
+    color: #181c1f;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: -1rem 0;
+}
