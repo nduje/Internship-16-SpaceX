@@ -31,7 +31,7 @@ export function useFetch<T = unknown>(url: string): FetchState<T> {
     useEffect(() => {
         if (!url) return;
         fetchData();
-    }, [url, fetchData]);
+    }, [url]);
 
     return { data, loading, error };
 }

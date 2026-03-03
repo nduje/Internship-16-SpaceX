@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout.tsx";
-import Home from "./pages/Home.tsx";
+import Home from "./pages/Home/Home.tsx";
 import Launches from "./pages/Launches.tsx";
 import LaunchDetail from "./pages/LaunchDetail.tsx";
 import Ships from "./pages/Ships.tsx";
