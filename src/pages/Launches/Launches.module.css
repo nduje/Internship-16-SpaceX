@@ -1,0 +1,15 @@
+.container {
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title {
+    color: #0f1112;
+    font-size: 4rem;
+    line-height: 1;
+}

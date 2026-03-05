@@ -48,8 +48,13 @@ const Countdown = () => {
         return () => clearInterval(interval);
     }, [data]);
 
-    if (loading) return <Loading />;
-    if (error) return <p>{error}</p>;
+    if (loading)
+        return (
+            <div className={styles.container}>
+                <Loading />
+            </div>
+        );
+    if (error) return <p className={styles.error}>{error}</p>;
     if (!timeLeft) return null;
 
     return (

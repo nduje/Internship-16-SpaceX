@@ -10,6 +10,10 @@
     color: #ffffff;
 }
 
+.container > * {
+    line-height: 1;
+}
+
 .title {
     font-size: 4rem;
     font-weight: 600;
@@ -29,4 +33,10 @@
     display: inline-block;
     width: 4ch;
     text-align: center;
+}
+
+.error {
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
 }

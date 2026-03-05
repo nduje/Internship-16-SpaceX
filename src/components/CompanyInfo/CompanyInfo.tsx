@@ -35,7 +35,12 @@ const CompanyInfo = () => {
         "https://api.spacexdata.com/v4/company",
     );
 
-    if (loading) return <Loading />;
+    if (loading)
+        return (
+            <div className={styles.container}>
+                <Loading />
+            </div>
+        );
     if (error) return <p className={styles.info}>{error}</p>;
     if (!data) return null;
 

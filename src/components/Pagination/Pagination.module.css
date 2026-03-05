@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    color: #a7a9ac;
+    text-decoration: none;
+    background: #22272b;
+    background: linear-gradient(to right, #0f1112, #181c1f, #22272b);
+    border: none;
+    border-radius: 16px;
+}
+
+.button:hover {
+    color: #005288;
+}
+
+.active {
+    color: #005288;
+}
+
+.hidden {
+    visibility: hidden;
+}
