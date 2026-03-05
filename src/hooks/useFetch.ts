@@ -6,12 +6,15 @@ type FetchState<T> = {
     error: string | null;
 };
 
-export function useFetch<T = unknown>(url: string): FetchState<T> {
+// Dopustili smo string | null
+export function useFetch<T = unknown>(url: string | null): FetchState<T> {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
     const fetchData = async () => {
+        if (!url) return;
+
         try {
             setLoading(true);
             const response = await fetch(url);
@@ -22,14 +25,13 @@ export function useFetch<T = unknown>(url: string): FetchState<T> {
             setData(result);
             setError(null);
         } catch (err) {
-            setError(err instanceof Error ? err.message : "An error occured");
+            setError(err instanceof Error ? err.message : "An error occurred");
         } finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
-        if (!url) return;
         fetchData();
     }, [url]);
 
