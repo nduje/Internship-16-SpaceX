@@ -32,7 +32,7 @@ const Pagination = ({
         <div className={styles.container}>
             <button
                 onClick={goPrevious}
-                className={`${styles.button} ${currentPage === 1 ? styles.hidden : ""}`}
+                className={`${styles.button} ${currentPage === 1 ? styles.hidden : ""} ${styles.function_button}`}
             >
                 Previous
             </button>
@@ -40,14 +40,14 @@ const Pagination = ({
                 <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`${styles.button} ${page === currentPage ? styles.active : ""}`}
+                    className={`${styles.button} ${page === currentPage ? styles.active : ""} ${styles.number_button}`}
                 >
                     {page}
                 </button>
             ))}
             <button
                 onClick={goNext}
-                className={`${styles.button} ${currentPage === totalPages ? styles.hidden : ""}`}
+                className={`${styles.button} ${currentPage === totalPages ? styles.hidden : ""} ${styles.function_button}`}
             >
                 Next
             </button>

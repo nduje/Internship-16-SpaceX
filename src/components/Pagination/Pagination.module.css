@@ -8,6 +8,7 @@
 
 .button {
     display: flex;
+    justify-content: center;
     align-items: center;
     font-family: inherit;
     cursor: pointer;
@@ -29,6 +30,14 @@
 
 .active {
     color: #005288;
+}
+
+.function_button {
+    width: 6rem;
+}
+
+.number_button {
+    width: 2rem;
 }
 
 .hidden {

@@ -1,0 +1,59 @@
+.container {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 128px 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 2rem;
+
+    width: 70%;
+    height: 180px;
+
+    background-color: #22272b;
+    border-radius: 8px;
+    border: 4px solid #0f1112;
+
+    padding: 2rem;
+
+    cursor: pointer;
+}
+
+.patch {
+    width: 128px;
+    height: auto;
+
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.name {
+    grid-column: 2;
+    grid-row: 1;
+
+    font-size: 1.75rem;
+    text-decoration: underline;
+}
+
+.details {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    opacity: 0.75;
+}
+
+.metadata {
+    position: absolute;
+    text-align: right;
+    top: 0;
+    right: 2%;
+    font-size: 0.75rem;
+    color: #a7a9ac;
+}
