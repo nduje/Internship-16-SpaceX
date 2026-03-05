@@ -26,13 +26,13 @@
 
 .status {
     font-size: 16rem;
-    color: #22272b;
+    color: var(--secondary-gray);
     line-height: 1;
     margin: 0;
 }
 
 .message {
-    color: #181c1f;
+    color: var(--primary-gray);
     font-size: 4rem;
     text-transform: uppercase;
     font-weight: 900;

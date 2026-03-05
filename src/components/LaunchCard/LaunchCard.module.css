@@ -10,9 +10,9 @@
     width: 70%;
     height: 180px;
 
-    background-color: #22272b;
+    background-color: var(--secondary-gray);
     border-radius: 8px;
-    border: 4px solid #0f1112;
+    border: 4px solid var(--primary-black);
 
     padding: 2rem;
 
@@ -55,5 +55,5 @@
     top: 0;
     right: 2%;
     font-size: 0.75rem;
-    color: #a7a9ac;
+    color: var(--primary-lightgray);
 }

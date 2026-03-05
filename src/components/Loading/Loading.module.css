@@ -93,7 +93,7 @@
 }
 
 .rocket {
-    background-color: #005288;
+    background-color: var(--primary-blue);
     height: 50px;
     width: 25px;
     border-radius: 50% 50% 0 0;
@@ -106,7 +106,7 @@
 .rocket:before {
     content: "";
     position: absolute;
-    background-color: #a7a9ac;
+    background-color: var(--primary-lightgray);
     height: 20px;
     width: 55px;
     border-radius: 50% 50% 0 0;
@@ -118,7 +118,7 @@
 .rocket:after {
     content: "";
     position: absolute;
-    background-color: #a7a9ac;
+    background-color: var(--primary-lightgray);
     height: 4px;
     width: 15px;
     border-radius: 0 0 2px 2px;
@@ -189,10 +189,10 @@
 }
 
 .window {
-    background-color: #181c1f;
+    background-color: var(--primary-gray);
     height: 10px;
     width: 10px;
-    border: 2px solid #a7a9ac;
+    border: 2px solid var(--primary-lightgray);
     border-radius: 50%;
     position: relative;
     top: 17px;

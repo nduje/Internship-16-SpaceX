@@ -2,4 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    --primary-white: #ffffff;
+    --primary-black: #0f1112;
+    --primary-blue: #005288;
+    --primary-lightgray: #a7a9ac;
+    --primary-gray: #181c1f;
+    --secondary-gray: #22272b;
 }

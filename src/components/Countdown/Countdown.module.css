@@ -7,7 +7,7 @@
     font-size: 8rem;
     font-weight: 900;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--primary-white);
 }
 
 .container > * {
@@ -19,7 +19,7 @@
     font-weight: 600;
     text-decoration: underline;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--primary-white);
 }
 
 .countdown {
@@ -36,7 +36,7 @@
 }
 
 .error {
-    color: #ffffff;
+    color: var(--primary-white);
     font-size: 1.5rem;
     line-height: 1;
 }

@@ -9,7 +9,7 @@
 }
 
 .title {
-    color: #0f1112;
+    color: var(--primary-black);
     font-size: 4rem;
     line-height: 1;
 }

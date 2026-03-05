@@ -16,20 +16,25 @@
     font-size: 1rem;
     line-height: 1;
     padding: 0.5rem 1rem;
-    color: #a7a9ac;
+    color: var(--primary-lightgray);
     text-decoration: none;
-    background: #22272b;
-    background: linear-gradient(to right, #0f1112, #181c1f, #22272b);
+    background: var(--secondary-gray);
+    background: linear-gradient(
+        to right,
+        var(--primary-black),
+        var(--primary-gray),
+        var(--secondary-gray)
+    );
     border: none;
     border-radius: 16px;
 }
 
 .button:hover {
-    color: #005288;
+    color: var(--primary-blue);
 }
 
 .active {
-    color: #005288;
+    color: var(--primary-blue);
 }
 
 .function_button {

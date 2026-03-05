@@ -6,10 +6,15 @@
     font-weight: 500;
     font-size: 17px;
     padding: 0.8em 1.3em 0.8em 0.9em;
-    color: #a7a9ac;
+    color: var(--primary-lightgray);
     text-decoration: none;
-    background: #22272b;
-    background: linear-gradient(to right, #0f1112, #181c1f, #22272b);
+    background: var(--secondary-gray);
+    background: linear-gradient(
+        to right,
+        var(--primary-black),
+        var(--primary-gray),
+        var(--secondary-gray)
+    );
     border: none;
     letter-spacing: 0.05em;
     border-radius: 16px;
@@ -26,7 +31,7 @@
 }
 
 .button:hover {
-    color: #005288;
+    color: var(--primary-blue);
 }
 
 .button:hover svg {
