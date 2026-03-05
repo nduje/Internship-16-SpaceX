@@ -1,12 +1,12 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout/Layout.tsx";
-import Home from "./pages/Home/Home.tsx";
-import Launches from "./pages/Launches/Launches.tsx";
-import LaunchDetail from "./pages/LaunchDetail/LaunchDetail.tsx";
-import Ships from "./pages/Ships.tsx";
-import ShipDetail from "./pages/ShipDetail.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Layout from "components/Layout/Layout.tsx";
+import Home from "pages/Home/Home.tsx";
+import Launches from "pages/Launches/Launches.tsx";
+import LaunchDetail from "pages/LaunchDetail/LaunchDetail.tsx";
+import Ships from "pages/Ships.tsx";
+import ShipDetail from "pages/ShipDetail.tsx";
+import NotFound from "pages/NotFound.tsx";
 
 function App() {
     return (

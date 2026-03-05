@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import Loading from "../../components/Loading/Loading";
+import { useFetch } from "hooks/useFetch";
+import Loading from "components/Loading/Loading";
 import styles from "./Launches.module.css";
-import LaunchesList from "../../components/LaunchesList/LaunchesList";
-import Pagination from "../../components/Pagination/Pagination";
-import type { Launch } from "../../types/Launch";
+import LaunchesList from "components/LaunchesList/LaunchesList";
+import Pagination from "components/Pagination/Pagination";
+import type { Launch } from "types/Launch";
 
 const Launches = () => {
     const [currentPage, setCurrentPage] = useState(1);

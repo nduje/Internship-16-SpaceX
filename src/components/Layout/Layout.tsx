@@ -1,6 +1,9 @@
 import { useState, type PropsWithChildren } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Layout.module.css";
+import logo from "assets/icons/spacex-logo.svg";
+import light from "assets/icons/light.svg";
+import dark from "assets/icons/dark.svg";
 
 const Layout = ({ children }: PropsWithChildren) => {
     const [defaultTheme, setDefaultTheme] = useState(true);
@@ -9,10 +12,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <div className={styles.container}>
             <header className={styles.header}>
                 <Link to="/" className={styles.logo_container}>
-                    <img
-                        src="src/assets/icons/spacex-logo.svg"
-                        className={styles.logo}
-                    />
+                    <img src={logo} className={styles.logo} />
                 </Link>
                 <nav className={styles.nav}>
                     <NavLink to="/" className={styles.navLink}>
@@ -25,11 +25,7 @@ const Layout = ({ children }: PropsWithChildren) => {
                         Ships
                     </NavLink>
                     <img
-                        src={
-                            defaultTheme
-                                ? "src/assets/icons/light.svg"
-                                : "src/assets/icons/dark.svg"
-                        }
+                        src={defaultTheme ? light : dark}
                         className={styles.theme}
                         onClick={() => setDefaultTheme((prev) => !prev)}
                     />

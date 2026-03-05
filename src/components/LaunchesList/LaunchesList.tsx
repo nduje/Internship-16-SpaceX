@@ -1,6 +1,6 @@
-import type { Launch } from "../../types/Launch";
+import type { Launch } from "types/Launch";
 import { Link } from "react-router-dom";
-import LaunchCard from "../LaunchCard/LaunchCard";
+import LaunchCard from "components/LaunchCard/LaunchCard";
 import styles from "./LaunchesList.module.css";
 
 interface LaunchesListProps {

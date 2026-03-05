@@ -1,5 +1,5 @@
-import { useFetch } from "../../hooks/useFetch";
-import Loading from "../Loading/Loading";
+import { useFetch } from "hooks/useFetch";
+import Loading from "components/Loading/Loading";
 import styles from "./CompanyInfo.module.css";
 
 type Info = {

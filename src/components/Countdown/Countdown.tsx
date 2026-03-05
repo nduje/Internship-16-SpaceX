@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import Loading from "../Loading/Loading";
+import { useFetch } from "hooks/useFetch";
+import Loading from "components/Loading/Loading";
 import styles from "./Countdown.module.css";
 
 type Launch = {

@@ -1,4 +1,4 @@
-import Button from "../Button/Button";
+import Button from "components/Button/Button";
 import styles from "./Status404.module.css";
 
 const Status404 = () => {
