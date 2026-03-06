@@ -1,7 +1,14 @@
-import Status404 from "components/Status404/Status404.tsx";
+import Button from "components/Button/Button";
+import styles from "./NotFound.module.css";
 
 const NotFound = () => {
-    return <Status404 />;
+    return (
+        <section className={styles.container}>
+            <h2 className={styles.message}>Houston, we have a</h2>
+            <h1 className={styles.status}>404</h1>
+            <Button url="/" message="Go back to homepage" />
+        </section>
+    );
 };
 
 export default NotFound;
