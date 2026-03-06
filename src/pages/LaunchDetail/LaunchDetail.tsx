@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useFetch } from "hooks/useFetch";
 import styles from "./LaunchDetail.module.css";
 import Button from "components/Button/Button";
@@ -35,8 +35,6 @@ const LaunchDetail = () => {
             </div>
         );
     if (launchError || !launch) return <p>{launchError}</p>;
-
-    console.log(launch.failures);
 
     return (
         <section className={styles.container}>
@@ -89,7 +87,7 @@ const LaunchDetail = () => {
                 </p>
             </div>
             <div className={styles.button_container}>
-                <Button url={"/launches"} message="Go back" />
+                <Button goBack message="Go back" />
             </div>
         </section>
     );

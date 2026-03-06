@@ -1,14 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
-    url: string;
     message: string;
+    url?: string;
+    goBack?: boolean;
 }
 
-const Button = ({ url, message }: ButtonProps) => {
-    return (
-        <Link to={url} className={styles.button}>
+const Button = ({ url, message, goBack = false }: ButtonProps) => {
+    const navigate = useNavigate();
+
+    const content = (
+        <>
             <svg
                 height="24"
                 width="24"
@@ -22,6 +25,20 @@ const Button = ({ url, message }: ButtonProps) => {
                 ></path>
             </svg>
             <span>{message}</span>
+        </>
+    );
+
+    if (goBack) {
+        return (
+            <button onClick={() => navigate(-1)} className={styles.button}>
+                {content}
+            </button>
+        );
+    }
+
+    return (
+        <Link to={url ?? "/"} className={styles.button}>
+            {content}
         </Link>
     );
 };

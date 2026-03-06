@@ -8,4 +8,5 @@ export type Ship = {
     type: string;
     home_port: string;
     link: string;
+    launches: string[];
 };

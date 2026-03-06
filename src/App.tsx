@@ -5,8 +5,8 @@ import Home from "pages/Home/Home.tsx";
 import Launches from "pages/Launches/Launches.tsx";
 import LaunchDetail from "pages/LaunchDetail/LaunchDetail.tsx";
 import Ships from "pages/Ships/Ships";
-import ShipDetail from "pages/ShipDetail.tsx";
-import NotFound from "pages/NotFound.tsx";
+import ShipDetail from "pages/ShipDetail/ShipDetail";
+import NotFound from "pages/NotFound/NotFound";
 
 function App() {
     return (
