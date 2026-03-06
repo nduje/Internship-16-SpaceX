@@ -6,8 +6,12 @@ type FetchState<T> = {
     error: string | null;
 };
 
-// Dopustili smo string | null
-export function useFetch<T = unknown>(url: string | null): FetchState<T> {
+type FetchOptions = RequestInit | null;
+
+export function useFetch<T = unknown>(
+    url: string | null,
+    options: FetchOptions = null,
+): FetchState<T> {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -17,10 +21,13 @@ export function useFetch<T = unknown>(url: string | null): FetchState<T> {
 
         try {
             setLoading(true);
-            const response = await fetch(url);
+
+            const response = await fetch(url, options ?? undefined);
+
             if (!response.ok) {
                 throw new Error(`Failed to fetch: ${response.status}`);
             }
+
             const result = await response.json();
             setData(result);
             setError(null);
@@ -33,7 +40,7 @@ export function useFetch<T = unknown>(url: string | null): FetchState<T> {
 
     useEffect(() => {
         fetchData();
-    }, [url]);
+    }, [url, options]);
 
     return { data, loading, error };
 }

@@ -5,6 +5,7 @@ import Button from "components/Button/Button";
 import Loading from "components/Loading/Loading";
 import type { Launch } from "types/Launch";
 import type { Rocket } from "types/Rocket";
+import logo from "assets/icons/spacex-logo.svg";
 
 const LaunchDetail = () => {
     const id = useParams().id;
@@ -40,7 +41,11 @@ const LaunchDetail = () => {
         <section className={styles.container}>
             <div className={styles.patch_container}>
                 <img
-                    src={launch.links.patch.large}
+                    src={
+                        launch.links.patch.large
+                            ? launch.links.patch.large
+                            : logo
+                    }
                     alt={launch.name}
                     className={styles.patch}
                 />
@@ -71,12 +76,16 @@ const LaunchDetail = () => {
                 ) : (
                     ""
                 )}
-                <p className={styles.detail}>
-                    <strong>Youtube:</strong>{" "}
-                    <a href={launch.links.webcast} className={styles.link}>
-                        {launch.links.webcast}
-                    </a>
-                </p>
+                {launch.links.webcast !== null ? (
+                    <p className={styles.detail}>
+                        <strong>Youtube:</strong>{" "}
+                        <a href={launch.links.webcast} className={styles.link}>
+                            {launch.links.webcast}
+                        </a>
+                    </p>
+                ) : (
+                    ""
+                )}
             </div>
             <div className={styles.metadata}>
                 {" "}

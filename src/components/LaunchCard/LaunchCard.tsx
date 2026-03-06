@@ -1,5 +1,6 @@
 import type { Launch } from "types/Launch";
 import styles from "./LaunchCard.module.css";
+import logo from "assets/icons/spacex-logo.svg";
 
 interface LaunchCardProps {
     launch: Launch;
@@ -9,7 +10,7 @@ const LaunchCard = ({ launch }: LaunchCardProps) => {
     return (
         <div className={styles.container}>
             <img
-                src={launch.links.patch.small}
+                src={launch.links.patch.small ? launch.links.patch.small : logo}
                 alt={launch.name}
                 className={styles.patch}
             />
