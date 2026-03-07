@@ -31,7 +31,8 @@
             "pages/*": ["src/pages/*"],
             "hooks/*": ["src/hooks/*"],
             "types/*": ["src/types/*"],
-            "assets/*": ["src/assets/*"]
+            "assets/*": ["src/assets/*"],
+            "context/*": ["src/context/*"]
         }
     },
     "include": ["src"]

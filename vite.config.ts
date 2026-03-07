@@ -12,6 +12,7 @@ export default defineConfig({
             pages: path.resolve(__dirname, "src/pages"),
             hooks: path.resolve(__dirname, "src/hooks"),
             types: path.resolve(__dirname, "src/types"),
+            context: path.resolve(__dirname, "src/context"),
         },
     },
 });

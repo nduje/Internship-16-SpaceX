@@ -1,4 +1,5 @@
-import { useState, type PropsWithChildren } from "react";
+import { useContext, type PropsWithChildren } from "react";
+import { useTheme } from "hooks/useTheme";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Layout.module.css";
 import logo from "assets/icons/spacex-logo.svg";
@@ -6,7 +7,7 @@ import light from "assets/icons/light.svg";
 import dark from "assets/icons/dark.svg";
 
 const Layout = ({ children }: PropsWithChildren) => {
-    const [defaultTheme, setDefaultTheme] = useState(true);
+    const { isLight, toggleTheme } = useTheme();
 
     return (
         <div className={styles.container}>
@@ -25,9 +26,9 @@ const Layout = ({ children }: PropsWithChildren) => {
                         Ships
                     </NavLink>
                     <img
-                        src={defaultTheme ? light : dark}
+                        src={isLight ? light : dark}
                         className={styles.theme}
-                        onClick={() => setDefaultTheme((prev) => !prev)}
+                        onClick={() => toggleTheme()}
                     />
                 </nav>
             </header>

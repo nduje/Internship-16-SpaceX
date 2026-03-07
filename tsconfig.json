@@ -11,7 +11,8 @@
             "components/*": ["components/*"],
             "pages/*": ["pages/*"],
             "hooks/*": ["hooks/*"],
-            "types/*": ["types/*"]
+            "types/*": ["types/*"],
+            "context/*": ["context/*"]
         }
     }
 }
