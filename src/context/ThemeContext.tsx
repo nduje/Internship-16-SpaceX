@@ -1,7 +1,14 @@
-import { createContext, useState, type PropsWithChildren } from "react";
+import {
+    createContext,
+    useEffect,
+    useState,
+    type PropsWithChildren,
+} from "react";
+
+type Theme = "light" | "dark";
 
 type ThemeContextType = {
-    isLight: boolean;
+    theme: Theme;
     toggleTheme: () => void;
 };
 
@@ -10,14 +17,21 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 );
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
-    const [isLight, setIsLight] = useState(true);
+    const [theme, setTheme] = useState<Theme>(() => {
+        const savedTheme = localStorage.getItem("theme") as Theme | null;
+        return savedTheme ?? "light";
+    });
 
     const toggleTheme = () => {
-        setIsLight((prev) => !prev);
+        setTheme((prev) => (prev === "light" ? "dark" : "light"));
     };
 
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
     return (
-        <ThemeContext.Provider value={{ isLight, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );
