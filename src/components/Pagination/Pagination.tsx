@@ -17,6 +17,9 @@ const Pagination = ({
     const { theme } = useTheme();
 
     const totalPages = Math.ceil(totalLaunches / launchesPerPage);
+
+    if (totalPages === 0) return null;
+
     const pages = [];
 
     for (let i = 1; i <= totalPages; i++) {
