@@ -9,4 +9,7 @@
     --primary-lightgray: #a7a9ac;
     --primary-gray: #181c1f;
     --secondary-gray: #22272b;
+
+    --background-color: var(--primary-white);
+    --text-color: var(--primary-black);
 }

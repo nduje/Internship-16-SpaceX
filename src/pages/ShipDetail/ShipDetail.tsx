@@ -5,8 +5,11 @@ import Button from "components/Button/Button";
 import Loading from "components/Loading/Loading";
 import type { Ship } from "types/Ship";
 import logo from "assets/icons/spacex-logo.svg";
+import { useTheme } from "hooks/useTheme";
 
 const ShipDetail = () => {
+    const { theme } = useTheme();
+
     const id = useParams().id;
 
     const {
@@ -18,14 +21,25 @@ const ShipDetail = () => {
     if (!id) return <p>No ship ID provided.</p>;
     if (loading)
         return (
-            <div className={styles.container}>
+            <div
+                className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+            >
                 <Loading />
             </div>
         );
-    if (error || !ship) return <p>{error}</p>;
+    if (error || !ship)
+        return (
+            <p
+                className={`${styles.info} ${theme === "light" ? "" : styles.info_dark}`}
+            >
+                {error}
+            </p>
+        );
 
     return (
-        <section className={styles.container}>
+        <section
+            className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+        >
             <div className={styles.image_container}>
                 <img
                     src={ship.image ? ship.image : logo}

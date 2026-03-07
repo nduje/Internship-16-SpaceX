@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Button.module.css";
+import { useTheme } from "hooks/useTheme";
 
 interface ButtonProps {
     message: string;
@@ -8,6 +9,8 @@ interface ButtonProps {
 }
 
 const Button = ({ url, message, goBack = false }: ButtonProps) => {
+    const { theme } = useTheme();
+
     const navigate = useNavigate();
 
     const content = (
@@ -30,14 +33,20 @@ const Button = ({ url, message, goBack = false }: ButtonProps) => {
 
     if (goBack) {
         return (
-            <button onClick={() => navigate(-1)} className={styles.button}>
+            <button
+                onClick={() => navigate(-1)}
+                className={`${styles.button} ${theme === "light" ? "" : styles.dark}`}
+            >
                 {content}
             </button>
         );
     }
 
     return (
-        <Link to={url ?? "/"} className={styles.button}>
+        <Link
+            to={url ?? "/"}
+            className={`${styles.button} ${theme === "light" ? "" : styles.dark}`}
+        >
             {content}
         </Link>
     );

@@ -5,6 +5,7 @@ import styles from "./Launches.module.css";
 import LaunchesList from "components/LaunchesList/LaunchesList";
 import Pagination from "components/Pagination/Pagination";
 import type { Launch } from "types/Launch";
+import { useTheme } from "hooks/useTheme";
 
 type LaunchesResponse = {
     docs: Launch[];
@@ -12,6 +13,8 @@ type LaunchesResponse = {
 };
 
 const Launches = () => {
+    const { theme } = useTheme();
+
     const [currentPage, setCurrentPage] = useState(1);
 
     const launchesPerPage = 10;
@@ -38,17 +41,32 @@ const Launches = () => {
 
     if (loading)
         return (
-            <div className={styles.container}>
+            <div
+                className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+            >
                 <Loading />
             </div>
         );
 
-    if (error) return <p className={styles.info}>{error}</p>;
+    if (error)
+        return (
+            <p
+                className={`${styles.info} ${theme === "light" ? "" : styles.dark}`}
+            >
+                {error}
+            </p>
+        );
     if (!data) return null;
 
     return (
-        <section className={styles.container}>
-            <h1 className={styles.title}>Launches</h1>
+        <section
+            className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+        >
+            <h1
+                className={`${styles.title} ${theme === "light" ? "" : styles.dark}`}
+            >
+                Launches
+            </h1>
 
             <LaunchesList currentLaunches={data.docs} />
 

@@ -1,3 +1,4 @@
+import { useTheme } from "hooks/useTheme";
 import styles from "./Pagination.module.css";
 
 type PaginationProps = {
@@ -13,6 +14,8 @@ const Pagination = ({
     currentPage,
     setCurrentPage,
 }: PaginationProps) => {
+    const { theme } = useTheme();
+
     const totalPages = Math.ceil(totalLaunches / launchesPerPage);
     const pages = [];
 
@@ -32,7 +35,7 @@ const Pagination = ({
         <div className={styles.container}>
             <button
                 onClick={goPrevious}
-                className={`${styles.button} ${currentPage === 1 ? styles.hidden : ""} ${styles.function_button}`}
+                className={`${styles.button} ${currentPage === 1 ? styles.hidden : ""} ${styles.function_button} ${theme === "light" ? "" : styles.dark}`}
             >
                 Previous
             </button>
@@ -40,14 +43,14 @@ const Pagination = ({
                 <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`${styles.button} ${page === currentPage ? styles.active : ""} ${styles.number_button}`}
+                    className={`${styles.button} ${page === currentPage ? styles.active : ""} ${styles.number_button} ${theme === "light" ? "" : styles.dark}`}
                 >
                     {page}
                 </button>
             ))}
             <button
                 onClick={goNext}
-                className={`${styles.button} ${currentPage === totalPages ? styles.hidden : ""} ${styles.function_button}`}
+                className={`${styles.button} ${currentPage === totalPages ? styles.hidden : ""} ${styles.function_button} ${theme === "light" ? "" : styles.dark}`}
             >
                 Next
             </button>

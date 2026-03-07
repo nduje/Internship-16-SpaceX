@@ -18,7 +18,7 @@
     padding: 0.5rem 1rem;
     color: var(--primary-lightgray);
     text-decoration: none;
-    background: var(--secondary-gray);
+    background: var(--secondary-black);
     background: linear-gradient(
         to right,
         var(--primary-black),
@@ -31,6 +31,16 @@
 
 .button:hover {
     color: var(--primary-blue);
+}
+
+.dark {
+    color: var(--primary-black);
+    background: var(--secondary-white);
+    background: linear-gradient(
+        to right,
+        var(--primary-white),
+        var(--primary-lightgray)
+    );
 }
 
 .active {

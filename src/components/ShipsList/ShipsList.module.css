@@ -18,3 +18,8 @@
     color: inherit;
     width: 100%;
 }
+
+.dark {
+    color: var(--primary-white);
+    background-color: var(--primary-black);
+}

@@ -1,14 +1,19 @@
 import type { Ship } from "types/Ship";
 import logo from "assets/icons/spacex-logo.svg";
 import styles from "./ShipCard.module.css";
+import { useTheme } from "hooks/useTheme";
 
 interface ShipCardProps {
     ship: Ship;
 }
 
 const ShipCard = ({ ship }: ShipCardProps) => {
+    const { theme } = useTheme();
+
     return (
-        <div className={styles.container}>
+        <div
+            className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+        >
             <img
                 src={ship.image ? ship.image : logo}
                 alt={ship.name}

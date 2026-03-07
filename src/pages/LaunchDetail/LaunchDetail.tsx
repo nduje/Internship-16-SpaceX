@@ -6,8 +6,11 @@ import Loading from "components/Loading/Loading";
 import type { Launch } from "types/Launch";
 import type { Rocket } from "types/Rocket";
 import logo from "assets/icons/spacex-logo.svg";
+import { useTheme } from "hooks/useTheme";
 
 const LaunchDetail = () => {
+    const { theme } = useTheme();
+
     const id = useParams().id;
 
     const {
@@ -31,14 +34,25 @@ const LaunchDetail = () => {
     if (!id) return <p>No launch ID provided.</p>;
     if (launchLoading)
         return (
-            <div className={styles.container}>
+            <div
+                className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+            >
                 <Loading />
             </div>
         );
-    if (launchError || !launch) return <p>{launchError}</p>;
+    if (launchError || !launch)
+        return (
+            <p
+                className={`${styles.info} ${theme === "light" ? "" : styles.info_dark}`}
+            >
+                {launchError}
+            </p>
+        );
 
     return (
-        <section className={styles.container}>
+        <section
+            className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+        >
             <div className={styles.patch_container}>
                 <img
                     src={

@@ -1,14 +1,19 @@
 import type { Launch } from "types/Launch";
 import styles from "./LaunchCard.module.css";
 import logo from "assets/icons/spacex-logo.svg";
+import { useTheme } from "hooks/useTheme";
 
 interface LaunchCardProps {
     launch: Launch;
 }
 
 const LaunchCard = ({ launch }: LaunchCardProps) => {
+    const { theme } = useTheme();
+
     return (
-        <div className={styles.container}>
+        <div
+            className={`${styles.container} ${theme === "light" ? "" : styles.dark}`}
+        >
             <img
                 src={launch.links.patch.small ? launch.links.patch.small : logo}
                 alt={launch.name}

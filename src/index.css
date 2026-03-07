@@ -8,13 +8,24 @@ body {
     line-height: 1.5;
     font-weight: 400;
 
-    color: #0c0b00;
-    background-color: #ffffff;
+    background-color: var(--background-color);
+    color: var(--text-color);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+main {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body[data-theme="dark"],
+main[data-theme="dark"] {
+    --background-color: var(--primary-black);
+    --text-color: var(--primary-);
 }
 
 html,
