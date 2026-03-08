@@ -18,7 +18,7 @@ const Ships = () => {
     const searchQuery = searchParams.get("search") || "";
     const { theme } = useTheme();
 
-    const shipsPerPage = 10;
+    const shipsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(1);
     const [ships, setShips] = useState<Ship[]>([]);
 
@@ -51,7 +51,9 @@ const Ships = () => {
 
     useEffect(() => {
         if (data?.docs.length) {
-            setShips((prev) => [...prev, ...data.docs]);
+            setShips((prev) =>
+                currentPage === 1 ? data.docs : [...prev, ...data.docs],
+            );
         }
     }, [data]);
 
