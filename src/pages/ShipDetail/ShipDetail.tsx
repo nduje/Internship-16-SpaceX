@@ -44,7 +44,7 @@ const ShipDetail = () => {
                 <img
                     src={ship.image ? ship.image : logo}
                     alt={ship.name}
-                    className={styles.image}
+                    className={`${styles.image} ${ship.image ? "" : styles.missing_image}`}
                 />
             </div>
             <div className={styles.info_container}>

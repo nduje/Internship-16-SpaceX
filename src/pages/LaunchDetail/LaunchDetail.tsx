@@ -61,7 +61,7 @@ const LaunchDetail = () => {
                             : logo
                     }
                     alt={launch.name}
-                    className={styles.patch}
+                    className={`${styles.patch} ${launch.links.patch.large ? "" : styles.missing_image}`}
                 />
             </div>
             <div className={styles.info_container}>
