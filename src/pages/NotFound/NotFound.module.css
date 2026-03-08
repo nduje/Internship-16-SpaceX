@@ -45,3 +45,18 @@
 .dark {
     color: var(--primary-white);
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        margin: 3rem;
+    }
+
+    .status {
+        font-size: 8rem;
+    }
+
+    .message {
+        font-size: 2rem;
+    }
+}
