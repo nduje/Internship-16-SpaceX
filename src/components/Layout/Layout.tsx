@@ -1,6 +1,6 @@
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { useTheme } from "hooks/useTheme";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Layout.module.css";
 import logo from "assets/icons/spacex-logo.svg";
 import light from "assets/icons/light.svg";
@@ -9,6 +9,7 @@ import dark from "assets/icons/dark.svg";
 const Layout = ({ children }: PropsWithChildren) => {
     const { theme, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState<Boolean>(false);
+    const location = useLocation();
 
     useEffect(() => {
         document.body.setAttribute("data-theme", theme);
@@ -23,6 +24,10 @@ const Layout = ({ children }: PropsWithChildren) => {
     useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : "auto";
     }, [menuOpen]);
+
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [location.pathname]);
 
     return (
         <div className={styles.container}>
