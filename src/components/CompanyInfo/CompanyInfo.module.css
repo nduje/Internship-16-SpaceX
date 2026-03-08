@@ -76,3 +76,46 @@
     text-decoration: underline;
     color: var(--primary-blue);
 }
+
+@media (max-width: 480px) {
+    .container {
+        gap: 0.75rem;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right,
+    .left {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .link_container {
+        gap: 1rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .summary {
+        font-size: 1.25rem;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+    }
+
+    .info {
+        font-size: 1rem;
+    }
+
+    .link {
+        font-size: 0.75rem;
+    }
+}
