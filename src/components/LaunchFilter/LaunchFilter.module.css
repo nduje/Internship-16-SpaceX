@@ -4,7 +4,7 @@
     font-family: inherit;
     font-size: 1.15rem;
     font-weight: 500;
-    padding: 0.8em 1.3em;
+    padding: 0.8rem 1.3rem;
     color: var(--primary-lightgray);
     background: var(--secondary-black);
     background: linear-gradient(
@@ -15,7 +15,7 @@
     );
     border: none;
     border-radius: 16px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.05rem;
     outline: none;
     cursor: pointer;
 }
@@ -37,4 +37,11 @@
         var(--primary-white),
         var(--primary-lightgray)
     );
+}
+
+@media (max-width: 768px) {
+    .dropdown {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
 }

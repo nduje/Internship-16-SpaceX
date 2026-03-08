@@ -58,3 +58,19 @@
 .hidden {
     visibility: hidden;
 }
+
+@media (max-width: 768px) {
+    .container {
+        gap: 1rem;
+    }
+
+    .number_button {
+        display: none;
+    }
+
+    .hidden {
+        visibility: visible;
+        pointer-events: none;
+        opacity: 50%;
+    }
+}

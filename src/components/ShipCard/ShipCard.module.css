@@ -78,3 +78,42 @@
         var(--primary-blue)
     );
 }
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        width: 75%;
+        height: fit-content;
+        gap: 0.25rem;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    .name {
+        font-size: 1.25rem;
+    }
+
+    .details {
+        font-size: 0.75rem;
+    }
+
+    .metadata {
+        position: relative;
+        order: -1;
+        text-align: center;
+
+        top: 0;
+        right: 0;
+    }
+
+    .missing_image {
+        display: none;
+    }
+}

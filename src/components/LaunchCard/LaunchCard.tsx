@@ -17,7 +17,7 @@ const LaunchCard = ({ launch }: LaunchCardProps) => {
             <img
                 src={launch.links.patch.small ? launch.links.patch.small : logo}
                 alt={launch.name}
-                className={styles.patch}
+                className={`${styles.patch} ${launch.links.patch.small ? "" : styles.missing_image}`}
             />
             <h2 className={styles.name}>{launch.name}</h2>
             <p className={styles.details}>{launch.details}</p>

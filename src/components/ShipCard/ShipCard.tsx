@@ -17,7 +17,7 @@ const ShipCard = ({ ship }: ShipCardProps) => {
             <img
                 src={ship.image ? ship.image : logo}
                 alt={ship.name}
-                className={styles.image}
+                className={`${styles.image} ${ship.image ? "" : styles.missing_image}`}
             />
             <h2 className={styles.name}>{ship.name}</h2>
             <p className={styles.details}>
