@@ -1,4 +1,4 @@
-import { useEffect, type PropsWithChildren } from "react";
+import { useEffect, useState, type PropsWithChildren } from "react";
 import { useTheme } from "hooks/useTheme";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Layout.module.css";
@@ -8,6 +8,7 @@ import dark from "assets/icons/dark.svg";
 
 const Layout = ({ children }: PropsWithChildren) => {
     const { theme, toggleTheme } = useTheme();
+    const [menuOpen, setMenuOpen] = useState<Boolean>(false);
 
     useEffect(() => {
         document.body.setAttribute("data-theme", theme);
@@ -19,13 +20,30 @@ const Layout = ({ children }: PropsWithChildren) => {
         }
     }, [theme]);
 
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    }, [menuOpen]);
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
                 <Link to="/" className={styles.logo_container}>
                     <img src={logo} className={styles.logo} />
                 </Link>
-                <nav className={styles.nav}>
+
+                <div className={styles.buttons_container}>
+                    <img
+                        src={theme === "light" ? light : dark}
+                        className={`${styles.theme} ${styles.hidden_mobile}`}
+                        onClick={() => toggleTheme()}
+                    />
+                    <button
+                        className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                    />
+                </div>
+
+                <nav className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
                     <NavLink to="/" className={styles.navLink}>
                         Home
                     </NavLink>
@@ -37,7 +55,7 @@ const Layout = ({ children }: PropsWithChildren) => {
                     </NavLink>
                     <img
                         src={theme === "light" ? light : dark}
-                        className={styles.theme}
+                        className={`${styles.theme} ${styles.hidden_desktop}`}
                         onClick={() => toggleTheme()}
                     />
                 </nav>

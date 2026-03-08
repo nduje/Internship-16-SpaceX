@@ -58,3 +58,89 @@
     flex-direction: column;
     flex: 1;
 }
+
+.buttons_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hamburger {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    color: var(--primary-lightgray);
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    --icon: "menu";
+}
+
+.hamburger::before {
+    content: var(--icon);
+    font-family: "Material Icons";
+    font-size: 2rem;
+}
+
+.hidden_mobile {
+    display: none;
+}
+
+.hidden_desktop {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        color: var(--primary-lightgray);
+        z-index: 3;
+    }
+
+    .nav {
+        position: fixed;
+        top: 96px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 96px);
+
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 4rem;
+
+        background-color: var(--primary-black);
+
+        z-index: 3;
+    }
+
+    .open {
+        display: flex;
+        --icon: "close";
+    }
+
+    .navLink {
+        font-size: 2rem;
+    }
+
+    .no_scroll {
+        overflow: hidden;
+    }
+
+    .hidden_mobile {
+        display: flex;
+    }
+
+    .hidden_desktop {
+        display: none;
+    }
+}
