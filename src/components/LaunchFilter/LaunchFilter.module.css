@@ -1,4 +1,4 @@
-.search {
+.dropdown {
     display: flex;
     align-items: center;
     font-family: inherit;
@@ -17,13 +17,15 @@
     border-radius: 16px;
     letter-spacing: 0.05em;
     outline: none;
+    cursor: pointer;
 }
 
-.search::placeholder {
+.dropdown option {
     color: var(--primary-lightgray);
+    background: var(--secondary-black);
 }
 
-.search:focus {
+.dropdown:focus {
     color: var(--primary-blue);
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
@@ -35,8 +37,4 @@
         var(--primary-white),
         var(--primary-lightgray)
     );
-}
-
-.dark::placeholder {
-    color: var(--primary-black);
 }
